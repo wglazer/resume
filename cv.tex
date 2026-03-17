@@ -22,11 +22,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
+% Adjusted margins for maximum space efficiency
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
 
 \urlstyle{same}
 \raggedbottom
@@ -36,113 +37,111 @@
 % Section formatting
 \titleformat{\section}{\Large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
 
-% Ensure PDF is machine readable
+% Ensure PDF is machine readable for ATS
 \pdfgentounicode=1
 
-% Custom commands
+% Custom commands for cleaner formatting
 \newcommand{\resumeItem}[1]{\item\small{#1}}
+
+% Redefined subheading to push the 4th argument (dates/locations) to the right margin.
+% Added \large to the #1 argument to make the Company/Degree name bigger.
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}
-  \item \textbf{#1, #2 $|$ #3 $|$ #4}
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    {\large\textbf{#1}}, #2 $|$ \textit{#3} & \textbf{#4} \\
+  \end{tabular*}\vspace{2pt} % Tiny breath before the summary
 }
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0.15in, label={}]}
+
+% List control macros - configured for tight, gapless spacing
+\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0in, label={}, itemsep=6pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in, label={\small$\bullet$}, topsep=2pt, itemsep=-1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 
 \begin{document}
 
+% 1. HEADER & CONTACT INFORMATION
 \begin{center}
   \textbf{\Huge William Glazer-Cavanagh} \\
+  \vspace{5pt}
+  \small
+  \textbf{Languages}: English, French $|$ \textbf{Phone}: 438-389-8650 $|$ \textbf{Email}: \href{mailto:willcavanagh@hotmail.com}{willcavanagh@hotmail.com} $|$ \textbf{Location}: Montreal, QC / Vancouver, BC \\
+  \textbf{LinkedIn}: \href{https://www.linkedin.com/in/williamglazercavanagh/}{linkedin.com/in/williamglazercavanagh} $|$ \textbf{GitHub}: \href{https://github.com/williamGlazer}{github.com/williamGlazer} $|$ \textbf{Website}: \href{https://williamglazer.github.io}{williamglazer.github.io}
 \end{center}
 
-% 1. PROFESSIONAL SUMMARY
-\section*{Applied ML Engineer $|$ Bridging Research \& Production}
-I'm a Software Engineer / ML Scientist bridging the gap between research and production systems.
-I can deconstruct state-of-the-art papers, profile GPU bottlenecks, iterate on experimental hypotheses, and translate technical complexity into plain English.
+\vspace{-10pt}
 
-% 2. CONTACT INFORMATION
-\section{Contact Information}
+% 2. PROFESSIONAL SUMMARY
+\section{Professional Summary}
+\vspace{-4pt}
+\textbf{Applied ML Engineer $|$ Bridging Research \& Production} \\
+\vspace{2pt}
+{\small Software Engineer and ML Scientist with 3 years of experience bridging research and production systems. My expertise spans deep learning architectures, distributed systems, and low-N data regimes. I can deconstruct state-of-the-art papers, profile GPU bottlenecks, and translate open-ended scientific goals into concrete plans.}
+
 \vspace{-6pt}
-\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-3pt]
-  \resumeItem{
-    \textbf{Phone}: 438-389-8650
-    $|$ \textbf{Email}: \href{mailto:willcavanagh@hotmail.com}{willcavanagh@hotmail.com}
-    $|$ \textbf{Location}: Montreal, QC / Vancouver, BC
-    \\
-    \textbf{LinkedIn}: \href{https://www.linkedin.com/in/williamglazercavanagh/}{linkedin.com/in/williamglazercavanagh}
-    $|$ \textbf{GitHub}: \href{https://github.com/williamGlazer}{github.com/williamGlazer}
-    $|$ \textbf{Website}: \href{https://williamglazer.github.io}{williamglazer.github.io}
-  }
-  \vspace{-12pt}
-\end{itemize}
-
 
 % 3. SKILLS
 \section{Skills}
-\vspace{-6pt}
-\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-3pt]
-  \resumeItem{\textbf{Modeling}: PyTorch $|$ JAX $|$ Transformers (BERT/ESM) $|$ Object Detection $|$ RAG $|$ Fine-tuning}
+\vspace{-4pt}
+\begin{itemize}[leftmargin=0in, label={}, itemsep=-2pt]
+  \resumeItem{\textbf{Modeling}: PyTorch $|$ JAX $|$ Transformers $|$ Object Detection $|$ RAG $|$ Fine-tuning $|$ Learning to Rank}
   \resumeItem{\textbf{Infrastructure}: Docker $|$ Modal (Serverless) $|$ Dask $|$ Parquet/Zarr $|$ Distributed Systems}
-  \resumeItem{\textbf{Core Stack}: Python $|$ SQL $|$ Bash $|$ ML System Design $|$ A/B Testing $|$ GPU Profiling}
+  \resumeItem{\textbf{Core Stack}: Python $|$ Bash $|$ ML System Design $|$ A/B Testing $|$ GPU Profiling $|$ Git $|$ OOP \& Functional Programming $|$ Unit Testing}
 \end{itemize}
 
-\vspace{-12pt}
+\vspace{-10pt}
 
 % 4. EXPERIENCE
 \section{Work Experience}
-
 \resumeSubHeadingList
 
-\resumeSubheading
-{AbCellera}{Montreal/Vancouver}{Machine Learning Scientist II}{05/2023 - Current}
+  % AbCellera
+  \resumeSubheading
+  {AbCellera}{Montreal/Vancouver}{Machine Learning Scientist II}{05/2023 - Current}
+  \vspace{-10pt}
+  
+  {\small Led the development of production-grade ML systems for protein engineering and high-throughput computer vision. Translated open-ended scientific research into software that directly reduced experimental failure rates.\par}
 
-\resumeSubHeadingList
-\resumeItem{\hspace{-12pt} \textbf{Project: ML for Protein Engineering} (Risk Assessment \& Inference)}
-\resumeItem{\textbullet\ \textbf{Translated complex science into working software:} Learned the biology domain to bridge Machine Learning, engineering, and research. Converted open-ended goals from Principal Scientists into clear engineering plans.}
-\resumeItem{\textbullet\ \textbf{Shipped risk assessment product:} Led the full product lifecycle from prototype to production. Enabled users to filter high-risk sequences, reducing downstream failure rates by 30\%.}
-\resumeItem{\textbullet\ \textbf{Engineered risk calibration system:} Validated custom data normalization strategies on noisy biological data with ablation studies. Applied this pipeline to calibrate Foundation Model probabilities, ensuring confidence scores aligned with empirical failure rates.}
-\resumeItem{\textbullet\ \textbf{Accelerated Transformer inference by 30x:} Removed serial bottlenecks and vectorized pre-processing to saturate GPUs for multiple Foundation Models.}
-\resumeItem{\textbullet\ \textbf{Optimized distributed systems:} Reduced container startup latency by 90\% by using volume caching to enable linear scaling during serverless fan-out.}
+  \resumeItemListStart
+    \resumeItem{\textbf{Risk Prediction Product:} Led the full lifecycle of a sequence filtering tool. Prioritized maintainability via rigorous unit testing and functional design, successfully deploying a product that directly reduced downstream experimental failure rates by 30\%.}
+    \resumeItem{\textbf{Low-N Preference Optimization:} Designed a pairwise learning-to-rank algorithm powered by language models to optimize candidate sequence selection. Mitigated severe data scarcity by applying preference optimization and rigorously A/B testing against baselines.}
+    \resumeItem{\textbf{High-Throughput Vision Architecture:} Designed and deployed a lightweight deep learning architecture (MobileNet backbone + detection head) that maximized imaging throughput from 400 to 1200 images/s, hitting the hardware's physical limits, while increasing model accuracy.}
+    \resumeItem{\textbf{Infrastructure \& Optimization:} Eliminated training bottlenecks for 1TB-scale microscopy data by engineering a sharded format (Parquet/Zarr) and leveraging Dask for parallel processing to fully saturate GPU utilization. Accelerated Transformer inference by 30x by vectorizing pre-processing.}
+    \resumeItem{\textbf{Model Alignment \& Calibration:} Validated custom data normalization strategies on noisy biological data, calibrating Foundation Model probabilities to ensure confidence scores aligned with empirical failure rates.}
+    \resumeItem{\textbf{Data Pipelines \& Active Learning:} Built a semi-supervised pipeline to label complex multi-class assays, achieving an 80\% preference rate from human experts in blind A/B tests. Doubled performance on edge cases (0.40 to 0.95 mAP) by building expert feedback tools to fine-tune models on hard examples.}
+  \resumeItemListEnd
+
+  % Croesus
+  \resumeSubheading
+  {Croesus}{Montreal}{Research Intern}{05/2021 - 08/2021}
+  
+  \vspace{-10pt}
+  {\small I explored foundational NLP architectures to define the research group's roadmap for grounding language models in factual data.\par}
+
+  \resumeItemListStart
+    \resumeItem{\textbf{Retrieval-Augmented Generation (RAG):} Evaluated the feasibility of Retrieval-Augmented Generation (RAG) by assessing early methods for injecting Knowledge Graphs into BERT-based models.}
+  \resumeItemListEnd
+
 \resumeSubHeadingListEnd
 
-\resumeSubHeadingList
-\resumeItem{\hspace{-12pt} \textbf{Project: High-Throughput Computer Vision} (100k+ images/day)}
-\resumeItem{\textbullet\ \textbf{Maximized imaging throughput (400 to 1200 images/s):} Designed a lightweight deep learning architecture (MobileNet backbone + detection head) to replace heavy legacy models, hitting the imaging hardware's physical limits.}
-\resumeItem{\textbullet\ \textbf{Doubled performance on edge cases (0.4 to 0.8 mAP):} Built a tool for experts to flag model failures. Used this feedback to fine-tune the model on hard examples, fixing errors on unseen data.}
-\resumeItem{\textbullet\ \textbf{Automated data labeling:} Built a semi-supervised pipeline to label complex multi-class assays. Validated quality with blind A/B tests, achieving an 80\% preference rate from human experts over the previous baseline.}
-\resumeItem{\textbullet\ \textbf{Eliminated Training Bottlenecks:} Engineered a sharded data format (separating metadata in Parquet from tensors in Zarr) for 1TB-scale microscopy data. Leveraged Dask for parallel processing to fully saturate GPU utilization during training.}
-\resumeItem{\textbullet\ \textbf{Saved weeks of engineering time:} Ran ablation studies on noisy imaging data to demonstrate that simpler clustering architectures matched Deep Learning performance, saving engineering time and reducing inference costs.}
-\resumeSubHeadingListEnd
-
-\resumeSubheading
-{Croesus}{Montreal}{Research Intern}{05/2021 - 08/2021}
-\resumeSubHeadingList
-\resumeItem{\textbullet\ \textbf{Evaluated Retrieval-Augmented Generation (RAG) feasibility:} Assessed early methods for injecting Knowledge Graphs into BERT-based architectures to define the research group's roadmap for grounding NLP models in factual data.}
-\resumeSubHeadingListEnd
-
-\resumeSubHeadingListEnd
-
-
-\vspace{-12pt}
+\vspace{-10pt}
 
 % 5. EDUCATION
 \section{Education}
 \resumeSubHeadingList
 
-\resumeSubheading
-{MSc. Machine Learning}{Professional Masters}{Graduation Year 2023}{University of Montreal (MILA)}
-\resumeSubHeadingList
-\vspace{-4pt}
-\resumeItem{\textbullet\ \textbf{Benchmarked JAX vs. PyTorch:} Re-implemented reinforcement learning algorithms (TD3/VPG) using JAX (Haiku/Optax) to evaluate JIT compilation benefits. Accelerated training by 5x using XLA compilation compared to standard PyTorch (JIT Vs. Eager).}
-\resumeSubHeadingListEnd
+  \resumeSubheading
+  {MSc. Machine Learning}{Professional Masters}{Graduation Year 2023}{University of Montreal (MILA)}
+  \resumeItemListStart
+    \resumeItem{\textbf{Benchmarked JAX vs. PyTorch:} Re-implemented reinforcement learning algorithms (TD3/VPG) using JAX (Haiku/Optax) to evaluate JIT compilation benefits. Accelerated training by 5x using XLA compilation compared to standard PyTorch (JIT Vs. Eager).}
+  \resumeItemListEnd
 
-\resumeSubheading
-{BEng. Software Engineering}{Artificial Intelligence Profile}{Graduation Year 2022}{Polytechnique Montreal}
-\resumeSubHeadingList
-\vspace{-4pt}
-\resumeItem{\textbullet\ \textbf{Published Research:} Co-authored \textit{Change Taxonomy for ML Pipelines} (Empirical Software Engineering, 2023).}
-\resumeItem{\textbullet\ \textbf{Community Leadership:} Co-founded PolyAI, a student initiative for Applied AI.}
-\resumeSubHeadingListEnd
+  \resumeSubheading
+  {BEng. Software Engineering}{Artificial Intelligence Profile}{Graduation Year 2022}{Polytechnique Montreal}
+  \resumeItemListStart
+    \resumeItem{\textbf{Published Research:} Co-authored \textit{Change Taxonomy for ML Pipelines} (Empirical Software Engineering, 2023).}
+    \resumeItem{\textbf{Community Leadership:} Co-founded PolyAI, a student initiative for Applied AI.}
+  \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
