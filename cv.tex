@@ -95,32 +95,39 @@
 \section{Work Experience}
 \resumeSubHeadingList
 
-  % AbCellera
-  \resumeSubheading
-  {AbCellera}{Montreal/Vancouver}{Machine Learning Scientist II}{05/2023 - Current}
-  \vspace{-10pt}
-  
-  {\small Led the development of production-grade ML systems for protein engineering and high-throughput computer vision. Translated open-ended scientific research into software that directly reduced experimental failure rates.\par}
+% AbCellera
+\resumeSubheading
+{AbCellera}{Montreal/Vancouver}{Machine Learning Scientist II}{05/2023 - Current}
+\vspace{-10pt}
 
-  \resumeItemListStart
-    \resumeItem{\textbf{Risk Prediction Product:} Led the full lifecycle of a sequence filtering tool. Prioritized maintainability via rigorous unit testing and functional design, successfully deploying a product that directly reduced downstream experimental failure rates by 30\%.}
-    \resumeItem{\textbf{Low-N Preference Optimization:} Designed a pairwise learning-to-rank algorithm powered by language models to optimize candidate sequence selection. Mitigated severe data scarcity by applying preference optimization and rigorously A/B testing against baselines.}
-    \resumeItem{\textbf{High-Throughput Vision Architecture:} Designed and deployed a lightweight deep learning architecture (MobileNet backbone + detection head) that maximized imaging throughput from 400 to 1200 images/s, hitting the hardware's physical limits, while increasing model accuracy.}
-    \resumeItem{\textbf{Infrastructure \& Optimization:} Eliminated training bottlenecks for 1TB-scale microscopy data by engineering a sharded format (Parquet/Zarr) and leveraging Dask for parallel processing to fully saturate GPU utilization. Accelerated Transformer inference by 30x by vectorizing pre-processing.}
-    \resumeItem{\textbf{Model Alignment \& Calibration:} Validated custom data normalization strategies on noisy biological data, calibrating Foundation Model probabilities to ensure confidence scores aligned with empirical failure rates.}
-    \resumeItem{\textbf{Data Pipelines \& Active Learning:} Built a semi-supervised pipeline to label complex multi-class assays, achieving an 80\% preference rate from human experts in blind A/B tests. Doubled performance on edge cases (0.40 to 0.95 mAP) by building expert feedback tools to fine-tune models on hard examples.}
-  \resumeItemListEnd
+{\small I built ranking and filtering models for protein engineering workflows, where every data point costs thousands. My work spanned ranking systems, low data regimes, language models, noisy biological assays, and distributed GPU inference. \par}
 
-  % Croesus
-  \resumeSubheading
-  {Croesus}{Montreal}{Research Intern}{05/2021 - 08/2021}
-  
-  \vspace{-10pt}
-  {\small I explored foundational NLP architectures to define the research group's roadmap for grounding language models in factual data.\par}
+\resumeItemListStart
+\resumeItem{\textbf{Risk Prediction Product:} Led the full lifecycle of a sequence filtering tool, successfully deploying a product that reduced downstream experimental failure rates by 30\%.}
+\resumeItem{\textbf{Language Model inference:} Increased throughput by 100x by enabling horizontal scaling, vectorizing pre-processing and eliminating cold start latency.}
+\resumeItem{\textbf{Model Calibration:} Calibrated foundation model likelihoods to ensure confidence scores aligned with empirical failure rates.}
+\resumeItem{\textbf{Ranking with Small Data:} Mitigated data scarcity in a pairwise ranking system by establishing scaling laws, quantifying the relation between model loss and dataset size.}
+\resumeItem{\textbf{Ablation Study Design:} Created ablation studies with curated datasets and rigorously A/B tested against baselines.}
+\resumeItemListEnd
 
-  \resumeItemListStart
-    \resumeItem{\textbf{Retrieval-Augmented Generation (RAG):} Evaluated the feasibility of Retrieval-Augmented Generation (RAG) by assessing early methods for injecting Knowledge Graphs into BERT-based models.}
-  \resumeItemListEnd
+{\small I built high-throughput computer vision models for microscopy, processing 100,000+ images daily. I optimized models to the physical instrument limits across noisy, complex assay formats. \par}
+
+\resumeItemListStart
+\resumeItem{\textbf{High-Throughput Vision Architecture:} Designed and deployed a lightweight deep learning architecture (MobileNet backbone + detection head) that maximized imaging throughput from 400 to 1200 images/s, hitting the hardware's physical limits, while increasing model accuracy.}
+\resumeItem{\textbf{Data Pipelines \& Active Learning:} Built a semi-supervised pipeline to label complex multi-class assays, achieving an 80\% preference rate from human experts in blind A/B tests. Doubled performance on edge cases (0.40 to 0.95 mAP) by building expert feedback tools to fine-tune models on hard examples.}
+\resumeItem{\textbf{Infrastructure \& Optimization:} Eliminated training bottlenecks for 1TB-scale microscopy data by engineering a sharded format (Parquet/Zarr) and leveraging Dask for parallel processing to fully saturate GPU utilization.}
+\resumeItemListEnd
+
+% Croesus
+\resumeSubheading
+{Croesus}{Montreal}{Research Intern}{05/2021 - 08/2021}
+
+\vspace{-10pt}
+{\small I explored foundational NLP architectures to define the research group's roadmap for grounding language models in factual data.\par}
+
+\resumeItemListStart
+\resumeItem{\textbf{Retrieval-Augmented Generation (RAG):} Evaluated the feasibility of Retrieval-Augmented Generation (RAG) by assessing early methods for injecting Knowledge Graphs into BERT-based models.}
+\resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
@@ -130,18 +137,18 @@
 \section{Education}
 \resumeSubHeadingList
 
-  \resumeSubheading
-  {MSc. Machine Learning}{Professional Masters}{Graduation Year 2023}{University of Montreal (MILA)}
-  \resumeItemListStart
-    \resumeItem{\textbf{Benchmarked JAX vs. PyTorch:} Re-implemented reinforcement learning algorithms (TD3/VPG) using JAX (Haiku/Optax) to evaluate JIT compilation benefits. Accelerated training by 5x using XLA compilation compared to standard PyTorch (JIT Vs. Eager).}
-  \resumeItemListEnd
+\resumeSubheading
+{MSc. Machine Learning}{Professional Masters}{Graduation Year 2023}{University of Montreal (MILA)}
+\resumeItemListStart
+\resumeItem{\textbf{Benchmarked JAX vs. PyTorch:} Re-implemented reinforcement learning algorithms (TD3/VPG) using JAX (Haiku/Optax) to evaluate JIT compilation benefits. Accelerated training by 5x using XLA compilation compared to standard PyTorch (JIT Vs. Eager).}
+\resumeItemListEnd
 
-  \resumeSubheading
-  {BEng. Software Engineering}{Artificial Intelligence Profile}{Graduation Year 2022}{Polytechnique Montreal}
-  \resumeItemListStart
-    \resumeItem{\textbf{Published Research:} Co-authored \textit{Change Taxonomy for ML Pipelines} (Empirical Software Engineering, 2023).}
-    \resumeItem{\textbf{Community Leadership:} Co-founded PolyAI, a student initiative for Applied AI.}
-  \resumeItemListEnd
+\resumeSubheading
+{BEng. Software Engineering}{Artificial Intelligence Profile}{Graduation Year 2022}{Polytechnique Montreal}
+\resumeItemListStart
+\resumeItem{\textbf{Published Research:} Co-authored \textit{Change Taxonomy for ML Pipelines} (Empirical Software Engineering, 2023).}
+\resumeItem{\textbf{Community Leadership:} Co-founded PolyAI, a student initiative for Applied AI.}
+\resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
